@@ -24,10 +24,19 @@ The dataset used for this project consists of [briefly describe the dataset, e.g
 
 ## Model Architecture
 
-The notebook utilizes a Recurrent Neural Network (RNN) architecture, specifically [mention if it's LSTM, GRU, or Vanilla RNN]. Key features of the model include:
-- Input layer: [describe input layer]
-- Hidden layers: [describe hidden layers and their types]
-- Output layer: [describe output layer]
+Model Architecture
+The notebook utilizes a Recurrent Neural Network (RNN) architecture, specifically LSTM (Long Short-Term Memory). This model is designed to handle sequential data effectively, making it well-suited for language classification tasks. Key features of the model include:
+
+-Input layer: The input layer is an embedding layer that converts each word in the input text into a dense vector of fixed size. This layer helps in capturing semantic meanings and relationships between words in a lower-dimensional space.
+
+-Hidden layers:
+  -LSTM layer: The core of the model is an LSTM layer, which processes the input sequences to capture temporal dependencies and context. This layer is capable of learning long-range dependencies in sequences, which is crucial for understanding language.
+  -Dropout layer: A dropout layer is applied to the output of the LSTM layer to prevent overfitting by randomly dropping a fraction of the units during training. This encourages the model to generalize better to unseen data.
+  -Dense layer: A fully connected dense layer follows the LSTM layer to interpret the output of the LSTM into a format suitable for classification. This layer is often used to transform the LSTM outputs into logits for the final classification.
+
+-Output layer: The output layer is a softmax layer that produces a probability distribution over the possible languages. This layer uses the output from the dense layer to determine the most likely language for the given input text.
+
+By incorporating an embedding layer, an LSTM layer, dropout, and a dense layer, this model effectively learns and generalizes patterns in language data for accurate classification.
 
 ## Training
 
