@@ -31,7 +31,9 @@ The notebook utilizes a Recurrent Neural Network (RNN) architecture, specificall
 
 -Hidden layers:
   -LSTM layer: The core of the model is an LSTM layer, which processes the input sequences to capture temporal dependencies and context. This layer is capable of learning long-range dependencies in sequences, which is crucial for understanding language.
+
   -Dropout layer: A dropout layer is applied to the output of the LSTM layer to prevent overfitting by randomly dropping a fraction of the units during training. This encourages the model to generalize better to unseen data.
+
   -Dense layer: A fully connected dense layer follows the LSTM layer to interpret the output of the LSTM into a format suitable for classification. This layer is often used to transform the LSTM outputs into logits for the final classification.
 
 -Output layer: The output layer is a softmax layer that produces a probability distribution over the possible languages. This layer uses the output from the dense layer to determine the most likely language for the given input text.
